@@ -1,0 +1,40 @@
+/*工程列表页面样式重置*/
+.project .el-dialog--tiny{
+  min-width: 300px !important;
+}
+.project .el-table th > .cell,.pack .el-table th > .cell{
+  text-align: center !important;
+}
+.project .el-form-item{
+  margin-bottom: 40px;
+}
+.project .el-form-item__error{
+  font-size: 14px;
+  line-height: 23px;
+}
+.project .up-load-main .el-form-item__error{
+  position: absolute;
+  top: 8px;
+  width: 129px;
+}
+.project .el-dialog__body{
+  padding: 10px 20px 0px !important;
+}
+.project .el-dialog--tiny{
+  margin-bottom: 0px;
+}
+.submit-pro .el-form-item__content{
+  text-align: right;
+}
+.project .el-input__inner{
+  height: 32px;
+}
+.project-header .left-btn button:first-child{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.project-header .left-btn button:last-child{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+

@@ -1,0 +1,74 @@
+server:
+  port: 8090
+  context-path: /smartclient
+  #servlet-path: /smartclient
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+   # url: jdbc:mysql://192.168.80.1:3306/smart_client
+    url: jdbc:mysql://127.0.0.1:3306/smartclient
+    username: root
+    password: root
+  http:
+    encoding:
+      force: true
+  redis:
+    host: 10.1.5.219
+    port: 6379
+    password: 111111
+  profiles:
+    include: winmac
+    #active: landroid
+    #active: mandroid
+    #include: mac
+
+
+#短信接口平台url
+smsNotiyUrl: http://10.12.9.241:9099/context/smsNotiy
+
+#从连接池中获取到连接的最长时间
+http:
+  request:
+      connectionRequestTimeout: 500
+      connectTimeout: 5000 #5000
+      socketTimeout: 30000  #数据传输的最长时间
+      staleConnectionCheckEnabled: true  #提交请求前测试连接是否可用
+  pool:
+      maxTotal: 200  #设置连接总数
+      defaultMaxPerRoute: 100  #设置每个地址的并发数
+
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+
+#图片上传接口配置
+ftp:
+  host: 10.1.5.219
+  port: 80
+  username: smartclient
+  password: smartclient
+  #apkCallPath: http://10.1.5.219/
+  #uploadApkUrl: /Users/aspire/image/apk
+  #uploadImageUrl: /Users/aspire/image
+  #imageCallPath: http://10.1.5.219/
+  apkCallPath: image.smartclient.com
+  uploadApkUrl: D:/smartclient/images
+  uploadImageUrl: D:/smartclient/images
+  imageCallPath: image.smartclient.com
+  #imageCallPath: http://192.168.80.89/
+  #uploadImageUrl: /home/software/smartClientProject/images
+
+
+logging:
+  level:
+    root: info
+  file: D:/smartclient/logs/smartclient.log
+  #file: /Users/aspire/logs/smartclient.log
+
+#file: /home/software/smartClientProject/logs/smartclient.log
+
+
+
+
+

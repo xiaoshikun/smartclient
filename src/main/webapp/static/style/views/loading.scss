@@ -1,0 +1,22 @@
+
+/*全屏loading样式重置*/
+.el-loading-mask.is-fullscreen{
+  background-color: rgba(255, 255, 255, 0);
+}
+.el-loading-mask.is-fullscreen .el-loading-spinner{
+  width: 320px;
+  height: 100px;
+  opacity: 0.6;
+  background: #000000;
+  border-radius: 8px;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top:50%;
+  padding-top: 20px;
+}
+.el-loading-mask.is-fullscreen .el-loading-spinner .path{
+  stroke:#fff;
+}
+.el-loading-mask.is-fullscreen .el-loading-spinner .el-loading-text{
+  color: #ffffff;
+}

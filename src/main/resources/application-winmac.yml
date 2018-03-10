@@ -1,0 +1,17 @@
+macconfig:
+  iosCmd:
+  iosRes: D:/smartclient/ios/project/project/res/
+  iospagelayoutPath: D:/smartclient/ios/project/project/pagelayout
+  iosprojectjsonOutPath: D:/smartclient/ios/project/project/project.json
+  iosprojectresourcesPath: D:/smartclient/ios/project
+  iosprojectZIPtargetPath: D:/smartclient/ios/project.zip
+  ioslogfile: D:/smartclient/ios/logs/
+  ###################
+  iosClearOldProject:
+  iosdefaultSelectedIconImagePath:
+  deleteiosContents:
+  deleteiosshell:
+  deleteiosMyApplicationxcodeproj:
+  deleteiosaa:
+  deleteiosMyApplication:
+  deleteiosprojectzip:

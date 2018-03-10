@@ -1,0 +1,16 @@
+macconfig:
+  iosCmd: /Users/aspire/Desktop/TemplateProject/ios.sh
+  iosRes: /Users/aspire/Desktop/project/project/project/res/
+  iospagelayoutPath: /Users/aspire/Desktop/project/project/project/pagelayout
+  iosprojectjsonOutPath: /Users/aspire/Desktop/project/project/project/project.json
+  iosprojectresourcesPath: /Users/aspire/Desktop/project/project
+  iosprojectZIPtargetPath: /Users/aspire/Desktop/TemplateProject/test/project.zip
+  ioslogfile: /Users/aspire/Desktop/project/logs
+  iosClearOldProject: /Users/aspire/Desktop/TemplateProject/test/removeCode.sh
+  iosdefaultSelectedIconImagePath: /Users/aspire/tomcat7/tomcat7/webapps/ROOT/static/images/icon-default.png
+  deleteiosContents: /Users/aspire/Desktop/TemplateProject/test/Contents.json
+  deleteiosshell: /Users/aspire/Desktop/TemplateProject/test/ios.sh
+  deleteiosMyApplicationxcodeproj: /Users/aspire/Desktop/TemplateProject/test/MyApplication.xcodeproj
+  deleteiosaa: /Users/aspire/Desktop/TemplateProject/test/aa.rb
+  deleteiosMyApplication: /Users/aspire/Desktop/TemplateProject/test/MyApplication
+  deleteiosprojectzip: /Users/aspire/Desktop/TemplateProject/test/project.zip

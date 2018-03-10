@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.aspire.mapper.ProjectPackageListDao">
+
+
+<select id="findPackageListByUserId" resultType="com.aspire.pojo.PackageList">
+			SELECT 	
+			package_id AS packageId, 
+			project_id AS projectId, 
+			user_id AS userId, 
+			installation_name AS apkName, 
+			project_name AS projectName, 
+			creater, 
+			updater AS lastModifier, 
+			installation_time AS packTime, 
+			android_down_url AS androidDownloadUrl, 
+			ios_down_url AS iosDownloadUrl
+			FROM package_list WHERE user_id = #{userId} ORDER BY installation_time DESC
+</select>
+
+
+<select id="findPackageListByUserIdAndApkName" resultType="com.aspire.pojo.PackageList">
+			SELECT 	
+			package_id AS packageId, 
+			project_id AS projectId, 
+			user_id AS userId, 
+			installation_name AS apkName, 
+			project_name AS projectName, 
+			creater, 
+			updater AS lastModifier, 
+			installation_time AS packTime, 
+			android_down_url AS androidDownloadUrl, 
+			ios_down_url AS iosDownloadUrl
+			FROM package_list WHERE user_id = #{userId} AND project_name LIKE #{projectName}
+</select>
+
+
+<insert id="addPackageListByUserIdAndProjectId" parameterType="com.aspire.pojo.PackageList"
+		keyProperty="packageId" useGeneratedKeys="true">
+		INSERT INTO package_list 
+			( 
+			project_id, 
+			user_id, 
+			installation_name, 
+			project_name, 
+			creater, 
+			updater, 
+			installation_time, 
+			android_down_url, 
+			ios_down_url
+			)
+			VALUES
+			( 
+			#{projectId},
+			#{userId},
+			#{apkName},
+			#{projectName},
+			#{creater},
+			#{lastModifier},
+			#{packTime},
+			#{androidDownloadUrl,jdbcType=VARCHAR},
+			#{iosDownloadUrl,jdbcType=VARCHAR}
+			)
+		
+</insert>
+
+
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+ 

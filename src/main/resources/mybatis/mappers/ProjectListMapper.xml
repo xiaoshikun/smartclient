@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.aspire.mapper.ProjectListDao">
+
+
+<insert id="addProjectList" keyProperty="projectId"
+		useGeneratedKeys="true" parameterType="com.aspire.pojo.ProjectList">
+		insert into project_list
+		(
+   		user_id,
+   		project_name,
+   		app_project_name,
+   		installation_name,
+   		app_name,
+   		app_icon,
+   		scheme,
+   		versioncode,
+   		creater,
+   		lastupdated,
+   		lastupdated_time
+		)VALUES
+		(
+		#{userId},
+		#{projectName},
+		#{appProjectName},
+		#{installationName},
+		#{appName},
+		#{appIcon},
+		#{scheme,jdbcType=VARCHAR},
+		#{versioncode,jdbcType=INTEGER},
+		#{creater},
+		#{lastupdated},
+		#{lastupdatedTime}
+		)
+	</insert>
+
+<select id="findProjectListByUserId" parameterType="int"
+		resultType="map">
+		SELECT
+		project_id AS projectId,
+		project_name AS projectName,
+		creater,
+		lastupdated AS lastUpdated,
+		lastupdated_time AS lastupdatedTime
+		FROM project_list WHERE user_id = #{userId}
+		ORDER BY project_id DESC
+</select>
+
+<select id="findProjectListBykeyWord" parameterType="string"
+	resultType="map">
+	SELECT
+	project_id AS projectId,
+	project_name AS projectName ,
+	creater,
+	lastupdated AS lastUpdated,
+	lastupdated_time AS lastupdatedTime
+	FROM project_list WHERE project_name LIKE #{keyword}
+</select>
+
+<select id="openMainProjectListByProjectId" parameterType="int"
+		resultType="com.aspire.pojo.PageList">
+	SELECT page_id AS pageId,
+    page_name AS pageName,
+	thumbnail,
+	isindex,
+	pagetype AS pageType,
+	create_date
+	FROM page_list WHERE project_id = #{projectId}  ORDER BY  create_date ASC
+</select>
+
+<update id="updateProjectList" parameterType="com.aspire.pojo.ProjectList">
+		UPDATE project_list
+		<set>
+			<if test="userId!=null">user_id=#{userId},</if>
+			<if test="projectName!=null">project_name=#{projectName},</if>
+			<if test="appProjectName!=null">app_project_name=#{appProjectName},</if>
+			<if test="installationName!=null">installation_name=#{installationName},</if>
+			<if test="appName!=null">app_name=#{appName},</if>
+			<if test="appIcon!=null">app_icon=#{appIcon},</if>
+			<if test="scheme!=null">scheme=#{scheme},</if>
+			<if test="versioncode!=null">versioncode=#{versioncode},</if>
+			<if test="creater!=null">creater=#{creater},</if>
+			<if test="lastupdated!=null">lastupdated=#{lastupdated},</if>
+			<if test="lastupdatedTime!=null">lastupdated_time=#{lastupdatedTime},</if>
+		</set>
+		WHERE project_id = #{projectId}
+	</update>
+	
+	
+	<select id="getProjectListDetail" parameterType="int" resultType="com.aspire.pojo.ProjectList">
+		SELECT 	project_id AS projectId, 
+				user_id AS userId,
+				project_name AS projectName, 
+				app_project_name AS appProjectName, 
+				installation_name AS installationName, 
+				app_name AS appName, 
+				app_icon AS appIcon, 
+				scheme, 
+				versioncode
+				FROM project_list WHERE project_id = #{projectId}
+	</select>
+	
+	
+	<select id="findProjectListJson" resultMap="ProjectListJson" >
+		SELECT 	
+		p.project_id AS p_project_id,
+		p.app_project_name AS p_application,
+		p.installation_name AS p_package_name,
+		p.app_name AS p_label,
+		p.app_icon AS p_launchicon,
+		p.scheme AS p_scheme, 
+		p.versioncode AS p_versioncode,
+		
+		ppp.pp_page_id, ppp.pp_project_id, ppp.pp_pagepath,
+		ppp.pp_page_title,ppp.pp_uitype, ppp.pp_layoutfile,
+		ppp.pp_pagetype,ppp.pp_isindex,pp_navigation
+		
+		FROM project_list p
+		
+		LEFT JOIN 
+		(SELECT 	
+		pp.page_id AS pp_page_id, pp.project_id AS pp_project_id, pp.pagepath AS pp_pagepath,
+		pp.page_title AS pp_page_title,pp.uitype AS pp_uitype, pp.layoutfile AS pp_layoutfile,
+		pp.pagetype AS pp_pagetype,pp.isindex AS pp_isindex,pp.navigation AS pp_navigation
+		FROM page_list pp ) ppp
+		ON p.project_id = ppp.pp_project_id
+		WHERE p.project_id =#{projectId} AND ppp.pp_pagetype = -1 AND ppp.pp_isindex = 0
+	
+	</select>
+	
+	<resultMap type="com.aspire.pojo.out.ProjectListJson" id="ProjectListJson" >
+		<id property="projectId" column="p_project_id"/>
+		<result property="application" column="p_application"/>
+		<result property="packageName" column="p_package_name"/>
+		<result property="label" column="p_label"/>
+		<result property="launchicon" column="p_launchicon"/>
+		<result property="scheme" column="p_scheme"/>
+		<result property="versioncode" column="p_versioncode"/>
+		<collection property="common_interfaces" ofType="com.aspire.pojo.out.CommonInterface">
+			<id property="pageid" column="pp_page_id"/>
+			<result property="pagepath" column="pp_pagepath"/>
+			<result property="projectId" column="pp_project_id"/>
+			<result property="caption" column="pp_page_title"/>
+			<result property="uitype" column="pp_uitype"/>
+			<result property="layoutfile" column="pp_layoutfile"/>
+			<result property="navigation" column="pp_navigation"/>
+		</collection>
+	</resultMap>
+	
+
+</mapper> 

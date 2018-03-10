@@ -1,0 +1,27 @@
+androidconfig:
+  cmd: /Users/aspire/smartclientTool/android.sh
+  logfile: /Users/aspire/logs
+  appicon: /Users/aspire/image/app_icon/
+  splashimage: /Users/aspire/image/splash/
+  androidDrawableHdpi: /Users/aspire/project/project/project/res/drawable-hdpi
+  androidXhdpi: /Users/aspire/project/project/project/res/drawable-xhdpi
+  androidXxhdpi: /Users/aspire/project/project/project/res/drawable-xxhdpi
+  androidXxxhdpi: /Users/aspire/project/project/project/res/drawable-xxxhdpi
+  pagelayoutPath: /Users/aspire/project/project/project/pagelayout
+  projectjsonOutPath: /Users/aspire/project/project/project/project.json
+  splashImagePath: /Users/aspire/image/icon
+  defaultSelectedIconImagePath: /Users/aspire/tomcat7/tomcat7/webapps/ROOT/static/images/icon-default.png
+  smartclientjson: /Users/aspire/smartclientTool/smartclient.json
+  androidjar: /Users/aspire/smartclientTool/TemplateTool.jar
+  #androidSDKPath: /home/software/androidSdk
+  #gradlePath: /home/software/gradle/gradle-3.4.1/bin
+  srcOut: /Users/aspire/smartclientTool/srcAndLibrary/projectSrcAndFtlFile
+  uitemplateLibraryPath: /Users/aspire/smartclientTool/srcAndLibrary/AspireUITemplateLibrary
+  desOut: /Users/aspire/smartclientTool/targetProject
+  osType: linux
+  projectresourcesPath: /Users/aspire/project/project
+  projectZIPtargetPath: /Users/aspire/smartclientTool/project.zip
+  deleteProjectZipPath: /Users/aspire/smartclientTool/project.zip
+  deleteProjectPath: /Users/aspire/smartclientTool/project
+  deleteProjectApkPackagePath: /Users/aspire/smartclientTool/androidProject
+  apkout: /Users/aspire/smartclientTool/androidProject

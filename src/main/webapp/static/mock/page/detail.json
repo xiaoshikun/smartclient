@@ -1,0 +1,17 @@
+{
+  "code": 0,
+  "msg":"获取成功",
+  "data":[
+    {
+      "pageId":"123213",
+      "pageName":"登录页",
+      "pageTitle":"你好！",
+      "componentsList":[{
+        "componentTitle":"第一个",
+        "relativeId":"12312312",
+        "componentId":"8888",
+        "componentParams":[]
+      }]
+    }
+  ]
+}

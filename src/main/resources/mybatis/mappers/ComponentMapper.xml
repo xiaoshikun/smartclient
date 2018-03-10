@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.aspire.mapper.ComponentListDao">
+
+	<insert id="addComponentList" parameterType="com.aspire.pojo.ComponentList"
+		keyProperty="componentId" useGeneratedKeys="true">
+		INSERT INTO component_list
+		(
+		page_id,
+		project_id,
+		module_id,
+		name,
+		type,
+		component_title,
+		relative_id,
+		params,
+		created,
+		updated
+		)VALUES(
+		#{pageId},
+		#{projectId},
+		#{moduleId,jdbcType=INTEGER},
+		#{name},
+		#{type},
+		#{componentTitle,jdbcType=VARCHAR},
+		#{relativeId,jdbcType=VARCHAR},
+		#{params},
+		#{created},
+		#{updated}
+		)
+	</insert>
+	
+	<update id="updateComponentList" parameterType="com.aspire.pojo.ComponentList">
+		UPDATE component_list
+		<set>
+			<if test="pageId!=null">page_id=#{pageId},</if>
+			<if test="projectId!=null">project_id=#{projectId},</if>
+			<if test="moduleId!=null">module_id=#{moduleId},</if>
+			<if test="name!=null">name=#{name},</if>
+			<if test="type!=null">type=#{type},</if>
+			<if test="componentTitle!=null">component_title=#{componentTitle},</if>
+			<if test="relativeId!=null">relative_id=#{relativeId},</if>
+			<if test="params!=null">params=#{params},</if>
+			<if test="sort!=null">sort=#{sort},</if>
+		</set>
+		WHERE component_id=#{componentId} 
+	</update>
+	
+
+	<delete id="deleteComponentList" parameterType="int">
+		DELETE FROM component_list WHERE component_id=#{componentId}
+	</delete>
+
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+ 

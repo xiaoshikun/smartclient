@@ -1,0 +1,23 @@
+{
+  "code": 0,
+  "msg":"获取成功",
+  "data":[
+    {
+      "pageId":"123213",
+      "pageName":"闪屏",
+      "componentsList":{
+        "componentTitle":"第一个",
+        "relativeId":"12312312",
+        "componentId":"8888",
+        "componentParams":{
+          "splashId":123,
+          "splashImage":"123456789",
+          "splashTime":"4567897979",
+          "jumpUrl":"123465489491",
+          "splashTitle":"闪屏",
+          "flashScreenPic":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505982946363&di=1f214e8d3009436084ebc7fa452ea3d1&imgtype=0&src=http%3A%2F%2Fwww.86ps.com%2FimgWeb%2Fpsd%2Fhf_fj%2FFJ_064.jpg"
+        }
+      }
+    }
+  ]
+}

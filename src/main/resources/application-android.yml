@@ -1,0 +1,28 @@
+androidconfig:
+  cmd: java -Dfile.encoding=utf-8 -jar D:/smartclient/smartclientTool/TemplateTool.jar D:/smartclient/smartclientTool/smartclient.json
+  logfile: D:/smartclient/logs
+  appicon: D:/smartclient/app_icon/
+  splashimage: D:/smartclient/images/splash/
+  androidDrawableHdpi: D:/smartclient/project/project/project/res/drawable-hdpi
+  androidXhdpi: D:/smartclient/project/project/project/res/drawable-xhdpi
+  androidXxhdpi: D:/smartclient/project/project/project/res/drawable-xxhdpi
+  androidXxxhdpi: D:/smartclient/project/project/project/res/drawable-xxxhdpi
+  pagelayoutPath: D:/smartclient/project/project/project/pagelayout
+  projectjsonOutPath: D:/smartclient/project/project/project/project.json
+  splashImagePath: D:/smartclient/images/icon
+  defaultSelectedIconImagePath: D:/idea/springboot/smartclient/src/main/webapp/static/images/icon-default.png
+  userDefinedSelectedIconImagePath: D:/smartclient/images/icon/ #NO
+  smartclientjson: D:/smartclient/smartclientTool/smartclient.json
+  androidjar: D:/smartclient/smartclientTool/TemplateTool.jar
+  androidSDKPath: C:/android/android-sdk-windows
+  gradlePath: C:/gradle/gradle-3.4.1/bin
+  srcOut: D:/smartclient/smartclientTool/srcAndLibrary/projectSrcAndFtlFile
+  uitemplateLibraryPath: D:/smartclient/smartclientTool/srcAndLibrary/AspireUITemplateLibrary
+  desOut: D:/smartclient/smartclientTool/targetProject
+  osType: windows
+  projectresourcesPath: D:/smartclient/project/project
+  projectZIPtargetPath: D:/smartclient/smartclientTool/project.zip
+  deleteProjectZipPath: D:/smartclient/smartclientTool/project.zip
+  deleteProjectPath: D:/smartclient/smartclientTool/project
+  deleteProjectApkPackagePath: D:/smartclient/smartclientTool/androidProject
+  apkout: D:/smartclient/smartclientTool/androidProject

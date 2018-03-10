@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aspire.mapper.PageListDao">
+
+<insert id="addPageList" parameterType="com.aspire.pojo.PageList" keyProperty="pageId" useGeneratedKeys="true">
+	insert into page_list
+	(
+	project_id,
+	isindex,
+	page_name,
+	page_title,
+	pagepath,
+	uitype,
+	layoutfile,
+	sort,
+	pagetype,
+	create_date,
+	navigation,
+	nav_pid
+	)
+	values(
+	#{projectId},
+	#{isindex,jdbcType=INTEGER},
+	#{pageName,jdbcType=VARCHAR},
+	#{pageTitle,jdbcType=VARCHAR},
+	#{pagepath,jdbcType=VARCHAR},
+	#{uitype,jdbcType=VARCHAR},
+	#{layoutfile,jdbcType=VARCHAR},
+	#{sort,jdbcType=INTEGER},
+	#{pageType,jdbcType=INTEGER},
+	#{createDate},
+	#{navigation,jdbcType=INTEGER},
+	#{navPid,jdbcType=INTEGER}
+	)
+</insert>
+
+
+<update id="updatePageList" parameterType="com.aspire.pojo.PageList">
+	UPDATE page_list
+	<set>
+		<if test="pageId!=null">page_id=#{pageId},</if>
+		<if test="projectId!=null">project_id=#{projectId},</if>
+		<if test="pageName!=null">page_name=#{pageName},</if>
+		<if test="pagepath!=null">pagepath=#{pagepath},</if>
+		<if test="pageTitle!=null">page_title=#{pageTitle},</if>
+		<if test="uitype!=null">uitype=#{uitype},</if>
+		<if test="layoutfile!=null">layoutfile=#{layoutfile},</if>
+		<if test="isindex!=null">isindex=#{isindex},</if>
+		<if test="thumbnail!=null">thumbnail=#{thumbnail},</if>
+		<if test="sort!=null">sort=#{sort},</if>
+		<if test="pageType!=null">pagetype=#{pageType},</if>
+		<if test="navigation!=null">navigation=#{navigation},</if>
+	</set>
+	WHERE page_id=#{pageId}
+</update>
+
+<select id="findPageList"  parameterType="com.aspire.pojo.PageList"
+      resultType="com.aspire.pojo.PageList">
+	SELECT 	
+	page_id AS pageId, 
+	project_id AS projectId, 
+	page_name AS pageName, 
+	pagepath AS pagepath, 
+	page_title AS pageTitle, 
+	uitype, 
+	layoutfile, 
+	isindex, 
+	thumbnail, 
+	sort,
+	pagetype,
+	navigation
+	FROM page_list
+	WHERE project_id =#{projectId} AND page_id=#{pageId}
+</select>
+
+<select id="findPageDetails"  parameterType="com.aspire.pojo.PageList"
+      resultType="com.aspire.component.PageList">
+	SELECT 	
+	page_id AS pageId, 
+	project_id AS projectId, 
+	page_name AS pageName, 
+	pagepath AS pagepath, 
+	page_title AS pageTitle, 
+	uitype, 
+	layoutfile, 
+	isindex, 
+	sort,
+	pagetype,
+	navigation
+	FROM page_list
+	WHERE project_id =#{projectId} AND page_id=#{pageId}
+</select>
+
+
+
+	
+</mapper> 

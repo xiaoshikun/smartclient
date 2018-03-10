@@ -1,0 +1,27 @@
+androidconfig:
+  cmd: java -Dfile.encoding=utf-8 -jar /home/software/smartClientProject/smartclientTool/TemplateTool.jar /home/software/smartClientProject/smartclientTool/smartclient.json
+  logfile: /home/software/smartClientProject/logs
+  appicon: /home/software/smartClientProject/appicon/
+  splashimage: /home/software/smartClientProject/images/splash/
+  androidDrawableHdpi: /home/software/smartClientProject/project/project/project/res/drawable-hdpi
+  androidXhdpi: /home/software/smartClientProject/project/project/project/res/drawable-xhdpi
+  androidXxhdpi: /home/software/smartClientProject/project/project/project/res/drawable-xxhdpi
+  androidXxxhdpi: /home/software/smartClientProject/project/project/project/res/drawable-xxxhdpi
+  pagelayoutPath: /home/software/smartClientProject/project/project/project/pagelayout
+  projectjsonOutPath: /home/software/smartClientProject/project/project/project/project.json
+  splashImagePath: /home/software/smartClientProject/images/icon
+  defaultSelectedIconImagePath: /home/software/tomcat/apache-tomcat-7.0.82/webapps/ROOT/static/images/icon-default.png
+  smartclientjson: /home/software/smartClientProject/smartclientTool/smartclient.json
+  androidjar: /home/software/smartClientProject/smartclientTool/TemplateTool.jar
+  androidSDKPath: /home/software/androidSdk
+  gradlePath: /home/software/gradle/gradle-3.4.1/bin
+  srcOut: /home/software/smartClientProject/smartclientTool/srcAndLibrary/projectSrcAndFtlFile
+  uitemplateLibraryPath: /home/software/smartClientProject/smartclientTool/srcAndLibrary/AspireUITemplateLibrary
+  desOut: /home/software/smartClientProject/smartclientTool/targetProject
+  osType: linux
+  projectresourcesPath: /home/software/smartClientProject/project/project
+  projectZIPtargetPath: /home/software/smartClientProject/smartclientTool/project.zip
+  deleteProjectZipPath: /home/software/smartClientProject/smartclientTool/project.zip
+  deleteProjectPath: /home/software/smartClientProject/smartclientTool/project
+  deleteProjectApkPackagePath: /home/software/smartClientProject/smartclientTool/androidProject
+  apkout: /home/software/smartClientProject/smartclientTool/androidProject

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.aspire.mapper.ModuleListDao">
+
+
+<select id="findModuleDetail" resultType="com.aspire.pojo.ModuleList">
+		SELECT
+		module_id AS moduleId,
+		project_id AS projectId,
+		id AS  typeId,
+		module_title AS moduleTitle,
+		module_name AS moduleName,
+		thumbnail AS thumbnail,
+		launchicon AS launchicon
+		FROM module_list WHERE module_id = #{moduleId}
+
+</select>
+
+	
+	<update id="updateModuleList" parameterType="com.aspire.pojo.ModuleList">
+		UPDATE module_list
+		<set>
+			<if test="moduleId!=null">module_id=#{moduleId},</if>
+			<if test="typeId!=null">id=#{typeId},</if>
+			<if test="moduleTitle!=null">module_title=#{moduleTitle},</if>
+			<if test="moduleName!=null">module_name=#{moduleName},</if>
+			<if test="thumbnail!=null">thumbnail=#{thumbnail},</if>
+			<if test="launchicon!=null">launchicon=#{launchicon},</if>
+			<if test="created!=null">created=#{created},</if>
+			<if test="updated!=null">updated=#{updated},</if>
+			
+		</set>
+		WHERE module_id = #{moduleId}
+	</update>
+	
+	<select id="findModuleList" parameterType="com.aspire.pojo.ModuleList"
+		resultType="com.aspire.pojo.ModuleList">
+		SELECT module_id AS moduleId,
+		id AS typeId,
+		module_name AS moduleName,
+		thumbnail AS thumbnail
+		FROM module_list
+	</select>
+	
+	<select id="findModuleListByKeyword" parameterType="string"
+		resultType="com.aspire.pojo.ModuleList">
+		SELECT module_id AS moduleId,
+		id AS typeId,
+		module_name AS moduleName,
+		thumbnail AS thumbnail
+		FROM module_list WHERE module_name LIKE #{moduleName}
+	</select>
+	
+	<insert id="copyModuleList" parameterType="com.aspire.pojo.ModuleList"
+			keyProperty="moduleId" useGeneratedKeys="true">
+			INSERT INTO module_list 
+			(
+			id, 
+			project_id,
+			module_title, 
+			module_name, 
+			thumbnail, 
+			launchicon,
+			created,
+			updated
+			)
+			VALUES
+			(
+			#{typeId},
+			#{projectId},
+			#{moduleTitle},
+			#{moduleName},
+			#{thumbnail},
+			#{launchicon},
+			#{created},
+			#{updated}
+			)
+	</insert>
+	
+	<insert id="addModuleListType" parameterType="com.aspire.pojo.ModuleListType"
+		keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO module_type (id,name)VALUES(#{id},#{name})
+	</insert>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
